@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<System name="csv2xml">
+  <Parameters>
+    <Parameter id="0" name="CSV_File_Path_Exists" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="2" name="Results_File_Path_Exists" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="3" name="Style_File_Path_Exists" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="4" name="Styled_Result_File_Path_Exists" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="5" name="CSV_Header_Exists" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="6" name="Last_Record_Line_Break" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="7" name="Number_Of_Records" type="1">
+      <values>
+        <value>zero</value>
+        <value>greater_than_zero</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="9" name="Valid_Style_File" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+    <Parameter id="10" name="Delimiter_Valid" type="2">
+      <values>
+        <value>true</value>
+        <value>false</value>
+      </values>
+      <basechoices />
+      <invalidValues />
+    </Parameter>
+  </Parameters>
+  <OutputParameters />
+  <Relations />
+  <Constraints>
+    <Constraint text="CSV_File_Path_Exists = true">
+      <Parameters>
+        <Parameter name="CSV_File_Path_Exists" />
+      </Parameters>
+    </Constraint>
+    <Constraint text="Results_File_Path_Exists = true">
+      <Parameters>
+        <Parameter name="Results_File_Path_Exists" />
+      </Parameters>
+    </Constraint>
+    <Constraint text="Style_File_Path_Exists  = true">
+      <Parameters>
+        <Parameter name="Style_File_Path_Exists" />
+      </Parameters>
+    </Constraint>
+    <Constraint text="Styled_Result_File_Path_Exists = true">
+      <Parameters>
+        <Parameter name="Styled_Result_File_Path_Exists" />
+      </Parameters>
+    </Constraint>
+    <Constraint text="Valid_Style_File = true">
+      <Parameters>
+        <Parameter name="Valid_Style_File" />
+      </Parameters>
+    </Constraint>
+  </Constraints>
+  <Testset doi="2">
+    <Testcase TCNo="0">
+      <Value>1</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>greater_than_zero</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+    </Testcase>
+    <Testcase TCNo="1">
+      <Value>2</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>zero</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+    </Testcase>
+    <Testcase TCNo="2">
+      <Value>3</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>true</Value>
+      <Value>greater_than_zero</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+    </Testcase>
+    <Testcase TCNo="3">
+      <Value>4</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>zero</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+    </Testcase>
+    <Testcase TCNo="4">
+      <Value>5</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+      <Value>false</Value>
+      <Value>zero</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+    </Testcase>
+    <Testcase TCNo="5">
+      <Value>6</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>true</Value>
+      <Value>greater_than_zero</Value>
+      <Value>true</Value>
+      <Value>false</Value>
+    </Testcase>
+  </Testset>
+  <Header>
+    <Value />
+    <Value>CSV_FILE_PATH_EXISTS</Value>
+    <Value>RESULTS_FILE_PATH_EXISTS</Value>
+    <Value>STYLE_FILE_PATH_EXISTS</Value>
+    <Value>STYLED_RESULT_FILE_PATH_EXISTS</Value>
+    <Value>CSV_HEADER_EXISTS</Value>
+    <Value>LAST_RECORD_LINE_BREAK</Value>
+    <Value>NUMBER_OF_RECORDS</Value>
+    <Value>VALID_STYLE_FILE</Value>
+    <Value>DELIMITER_VALID</Value>
+  </Header>
+  <Stat-Data>
+    <ExecutionTime>0.18</ExecutionTime>
+    <MaxDomainSize>2</MaxDomainSize>
+    <MinDomainSize>2</MinDomainSize>
+    <TotalNoOfCombination>74</TotalNoOfCombination>
+    <TotalNoOfTests>6</TotalNoOfTests>
+    <Algorithm>IPOG</Algorithm>
+  </Stat-Data>
+</System>
+
