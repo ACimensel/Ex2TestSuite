@@ -6,33 +6,29 @@
 
 using namespace std;
 
-bool test(const string& inputFile, const string& outputFile);
+bool test(const string& inputFile, const string& outputFile, bool err = false);
+bool testForError(const string& outputFile);
 bool matchFiles(const string& outputFile);
 
 int main(){
-    // TODO print whether test failed or passed
-    bool test1_result = test("input1.csv", "output1.xml");
+    bool test1_result = test("input1.csv", "output1.xml", true);
     bool test2_result = test("input2.csv", "output2.xml");
     bool test3_result = test("input3.csv", "output3.xml");
-    // bool test_result = test("input1.csv", "output1.xml");
-    // bool test1_result = test("input1.csv", "output1.xml");
+    bool test4_result = test("input4.csv", "output4.xml", true);
+    bool test5_result = test("input5.csv", "output5.xml");
+    bool test6_result = test("input6.csv", "output6.xml", true);
     cout << "\n";
-    printf("Test 1: %s \n", test1_result ? "Pass" : "Fail");
-    printf("Test 2: %s \n", test2_result ? "Pass" : "Fail");
-    printf("Test 3: %s \n", test3_result ? "Pass" : "Fail");
-    // printf("Test 1: %s \n", test("input1.csv", "output1.xml") ? "Pass" : "Fail");
-    // printf("Test 1: %s \n", test("input1.csv", "output1.xml") ? "Pass" : "Fail");
-    // printf("Test 1: %s \n", test("input1.csv", "output1.xml") ? "Pass" : "Fail");
-    //test("input2.csv", "output2.xml");
-    //test("input3.csv", "output3.xml");
-    //test("input4.csv", "output4.xml");
-    //test("input5.csv", "output5.xml");
-    //test("input6.csv", "output6.xml");
+    printf("Test 1: %s \n", test1_result ? "Pass" : "--Fail--");
+    printf("Test 2: %s \n", test2_result ? "Pass" : "--Fail--");
+    printf("Test 3: %s \n", test3_result ? "Pass" : "--Fail--");
+    printf("Test 4: %s \n", test4_result ? "Pass" : "--Fail--");
+    printf("Test 5: %s \n", test5_result ? "Pass" : "--Fail--");
+    printf("Test 6: %s \n", test6_result ? "Pass" : "--Fail--");
     cout << "Enter any string to escape.\n";
     getchar();
 }
 
-bool test(const string& inputFile, const string& outputFile){
+bool test(const string& inputFile, const string& outputFile, bool err){
     string jarFilePath = "";
     string javaJar = "java -jar ";
     string inputLoc = "TestInputs\\" + inputFile + ' ';
@@ -46,8 +42,22 @@ bool test(const string& inputFile, const string& outputFile){
 
     printf("Jar execution path: %s\n\n", jarFilePath.c_str());
     system(jarFilePath.c_str());
+    if (err) {
+        return testForError(outputFile);
+    } else {
+        return matchFiles(outputFile); 
+    }
+}
 
-    return matchFiles(outputFile); 
+bool testForError(const string& outputFile) {
+    ifstream file;
+    file.open("TestOutputs\\" + outputFile);
+    if(file.fail()) {
+        return true;
+    }
+    file.close();
+    return false;
+    
 }
 
 bool matchFiles(const string& outputFile) {
@@ -68,12 +78,16 @@ bool matchFiles(const string& outputFile) {
             cout << "Not the same line: \n";
             cout << line1 << "\n";
             cout << line2 << "\n\n";
+            file1.close();
+            file2.close();
             return false;
         }
     }
 
     if (!file2.eof()) {
         printf("Not thee same length\n");
+        file1.close();
+        file2.close();
         return false;
     }
 

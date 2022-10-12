@@ -1,0 +1,10 @@
+<html>
+<body>
+<h2>Qualified Contestants</h2>
+<table border="1">
+<tr bgcolor="#9acd32">
+<th>Name</th><th>Score</th><th>Occupation</th><th>Institution</th>
+</tr>
+</table>
+</body>
+</html>

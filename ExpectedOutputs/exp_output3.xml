@@ -1,35 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <root>
-<csv__to__xml.Contestant>
-  <name>John Doe</name>
-  <major>Agricultural studies</major>
-  <institution>Harvard University</institution>
-  <score>98</score>
-</csv__to__xml.Contestant><csv__to__xml.Contestant>
-  <name>Sam Adams</name>
-  <major>Biology</major>
-  <institution>Dartmouth College</institution>
-  <score>87</score>
-</csv__to__xml.Contestant><csv__to__xml.Contestant>
-  <name>James Isner</name>
-  <major>Computer Science</major>
-  <institution>MIT</institution>
-  <score>100</score>
-</csv__to__xml.Contestant><csv__to__xml.Contestant>
-  <name>George Orwell</name>
-  <major>English Literature</major>
-  <institution>Eton College</institution>
-  <score>99</score>
-</csv__to__xml.Contestant><csv__to__xml.Contestant>
-  <name>Patrick Chang</name>
-  <major>Computer Science</major>
-  <institution>National University of Singapore</institution>
-  <score>93</score>
-</csv__to__xml.Contestant><csv__to__xml.Contestant>
-  <name>Ajay Babu</name>
-  <major>Computer Science</major>
-  <institution>National University of Singapore</institution>
-  <score>92</score>
-</csv__to__xml.Contestant>
+  <row>
+    <FIELD1>aaaa</FIELD1>
+    <FIELD2>bbb</FIELD2>
+    <FIELD3>ccc</FIELD3>
+  </row>
+  <row>
+    <FIELD1>dddd</FIELD1>
+    <FIELD2>ffff</FIELD2>
+    <FIELD3>gggg</FIELD3>
+  </row>
+  <row>
+    <FIELD1>hhhhh</FIELD1>
+    <FIELD2>iiiiii</FIELD2>
+    <FIELD3>jjjjj</FIELD3>
+  </row>
 </root>
